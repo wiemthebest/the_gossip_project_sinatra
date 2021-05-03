@@ -3,7 +3,14 @@
     <title>The Gossip Project</title>
   </head>
   <body>
-    <h1> la liste des potins arrive bientôt</h1>
+    <h1> la liste des potins</h1>
     <a href="/gossips/new/">Créer un nouveau potin</a>
+    <% gossips.each_with_index do |gossip, index| %>
+      <p>
+       <a href="/gossips/<%= index %>"> <%= gossip.author %></a>
+       <br/>
+        <%= gossip.content %>
+      </p>
+    <% end %>
   </body>
 </html>
